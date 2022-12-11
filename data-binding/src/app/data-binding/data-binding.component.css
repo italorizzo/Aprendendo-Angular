@@ -1,0 +1,12 @@
+img{
+    display: block;
+    margin: 10px;
+}
+article{
+    padding: 50px 10px 50px 10px;
+}
+.highlight{
+    color: red;
+    font-weight: bold;
+    background-color: pink;
+}
