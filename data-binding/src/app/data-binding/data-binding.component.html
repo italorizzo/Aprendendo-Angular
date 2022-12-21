@@ -62,3 +62,34 @@
         </div>
     </article>
 </section>
+
+<section class="two-way-data-binding">
+    <article>
+        <h3>Two-way Data Binding</h3>
+        <div>
+            <input type="text"
+            [(ngModel)]="nome"
+            >
+            <p>Você digitou o nome {{ nome }}</p>
+        </div>
+        <div>
+            <p>Meu nome é {{ pessoa.nome }} e tenho {{ pessoa.idade }} anos</p>
+            <input type="text" [(ngModel)]="pessoa.nome"
+            >
+            <input type="number" [(ngModel)]="pessoa.idade"
+            >
+        </div>
+    </article>
+</section>
+
+<section class="input-output-properities">
+    <article>
+        <h3>Input/Output properities</h3>
+
+        <app-curso [nomeCurso]="nomeDoCurso"></app-curso>
+
+        <contador [valor]="10"
+            (mudouValor)="onMudouValor($event)"
+        ></contador>
+    </article>
+</section>

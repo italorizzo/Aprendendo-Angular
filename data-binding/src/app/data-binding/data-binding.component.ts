@@ -1,3 +1,4 @@
+import { HtmlTagDefinition } from '@angular/compiler';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,6 +8,7 @@ import { Component } from '@angular/core';
 })
 export class DataBindingComponent {
   url:string = "https://youtube.com"
+  
 
   urlImagem:string = "https://picsum.photos/400/300"
 
@@ -31,7 +33,20 @@ export class DataBindingComponent {
     this.valorSalvo = valor;
   }
 
+  pessoa:any = {
+    nome:'Ítalo',
+    idade: 15
+  }
+  
+  nome: any="abc"
+  
   onMouseOverOut(){
     this.isMouseOver = !this.isMouseOver;
   }
+
+  
+  onMudouValor(evento: any){
+    console.log(evento)
+  }
+
 }
