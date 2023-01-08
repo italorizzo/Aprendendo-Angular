@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+
+        <a class="nav-item nav-link"
+        [class.ative]="aba == 'home'"
+        (click)="aba = 'home'">home</a>
+
+        <a class="nav-item nav-link"
+        [class.ative]="aba == 'mapa'"
+        (click)="aba = 'mapa'">mapa</a>
+
+        <a class="nav-item nav-link"
+        [class.ative]="aba == 'lista'"
+        (click)="aba = 'lista'">lista</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container" ngSwitch="aba">
+    <p *ngSwitchCase="'home'">texto de home</p>
+    <p *ngSwitchCase="'mapa'">texto de mapa</p>
+    <p *ngSwitchCase="'lista'">texto de lista</p>
+</div>

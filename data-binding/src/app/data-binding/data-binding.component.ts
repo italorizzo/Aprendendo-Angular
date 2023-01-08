@@ -1,4 +1,3 @@
-import { HtmlTagDefinition } from '@angular/compiler';
 import { Component } from '@angular/core';
 
 @Component({
@@ -47,6 +46,10 @@ export class DataBindingComponent {
   
   onMudouValor(evento: any){
     console.log(evento)
+  }
+
+  salvar(){
+    this.valorSalvo = this.valorAtual
   }
 
 }

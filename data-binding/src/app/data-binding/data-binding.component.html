@@ -41,7 +41,11 @@
           </button>
     
           <br><br>
-    
+
+          <!-- $event é tudo que é disparado pelo input nesse caso -->
+
+          <!-- <input type="text" [(ngModel)]="valorAtual" (keyup.enter)="salvar()"> --outra forma-->
+          
           <input type="text"
             (keyup)="onKeyUp($event)"
             (keyup.enter)="salvarValor(campoInput.value)"
