@@ -1,0 +1,12 @@
+<h2>*ngIf</h2>
+
+<div *ngIf="mostrarCursos">
+    Lista de coisas aqui. {{ cursos }}
+</div>
+<div *ngIf="!mostrarCursos">
+    Não existem cursos a serem mostrados aqui
+</div>
+
+<br>
+
+<button (click)="mostar()">Mostrar Cursos</button>

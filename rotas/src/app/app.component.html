@@ -1,0 +1,13 @@
+<header>
+  <ul>
+    <li><a routerLink="">Home</a></li>
+    <li><a routerLinkActive="active" routerLink="login">Login</a></li>
+    <li><a routerLinkActive="active" [routerLink]= "['curso', valorId.value]">Curso</a></li>
+  </ul>
+</header>
+
+
+<p>Digite o id do curso</p>
+<input type="text" #valorId>
+<router-outlet></router-outlet>
+

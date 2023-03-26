@@ -1,0 +1,99 @@
+<section class="property-binding">
+    <article>
+        <h3>Interpolação</h3>
+        <p>String realizada com Interpolação: {{ url }}</p>
+    </article>
+    <article>
+        <h3>Property Binding</h3>
+        <img src="{{ urlImagem }}">
+        <img [src]="urlImagem">
+    </article>
+    <article #classe (change)="0">
+        <h3>Class e Style Binding</h3>
+        <div>
+            Selecione uma classe:
+            <select #item (change)="0">
+                <option value="alert-success">Sucesso</option>
+                <option value="alert-info">Info</option>
+                <option value="alert-warning">Alerta</option>
+                <option value="alert-danger">Erro</option>
+            </select>
+            <br><br>
+            <div class="alert" role="alert"
+            [class.alert-success]="item.value == 'alert-success'">Sucesso</div>
+
+            <div class="alert" role="alert"
+            [class.alert-info]="item.value == 'alert-info'">Info</div>
+
+            <div class="alert" role="alert"
+            [class.alert-warning]="item.value == 'alert-warning'">Alerta</div>
+
+            <div class="alert" role="alert"
+            [class.alert-danger]="item.value == 'alert-danger'">Perigo</div>
+        </div>
+    </article>
+    <article>
+        <h3>Event binding</h3>
+        <div>
+          <button (click)="botaoClicado()"
+          class="btn btn-primary">
+            Me clique!
+          </button>
+    
+          <br><br>
+
+          <!-- $event é tudo que é disparado pelo input nesse caso -->
+
+          <!-- <input type="text" [(ngModel)]="valorAtual" (keyup.enter)="salvar()"> --outra forma-->
+          
+          <input type="text"
+            (keyup)="onKeyUp($event)"
+            (keyup.enter)="salvarValor(campoInput.value)"
+            (blur)="salvarValor(campoInput.value)"
+            #campoInput />
+    
+           <p>Valor atual: {{ valorAtual }}</p>
+           <p>Valor salvo: {{ valorSalvo }}</p>
+    
+           <br>
+           <span
+            (mouseover)="onMouseOverOut()"
+            (mouseout)="onMouseOverOut()"
+            [class.highlight]="isMouseOver"
+            >
+             Passe o mouse sobre mim
+          </span>
+        </div>
+    </article>
+</section>
+
+<section class="two-way-data-binding">
+    <article>
+        <h3>Two-way Data Binding</h3>
+        <div>
+            <input type="text"
+            [(ngModel)]="nome"
+            >
+            <p>Você digitou o nome {{ nome }}</p>
+        </div>
+        <div>
+            <p>Meu nome é {{ pessoa.nome }} e tenho {{ pessoa.idade }} anos</p>
+            <input type="text" [(ngModel)]="pessoa.nome"
+            >
+            <input type="number" [(ngModel)]="pessoa.idade"
+            >
+        </div>
+    </article>
+</section>
+
+<section class="input-output-properities">
+    <article>
+        <h3>Input/Output properities</h3>
+
+        <app-curso [nomeCurso]="nomeDoCurso"></app-curso>
+
+        <contador [valor]="10"
+            (mudouValor)="onMudouValor($event)"
+        ></contador>
+    </article>
+</section>
